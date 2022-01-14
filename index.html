@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="css/galeria.css">
+</head>
+
+<body>
+    <div class="tabset">
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+        <label for="tab1">Grabar fotos</label>
+        <!-- Tab 2 -->
+        <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+        <label for="tab2">Filtrar galeria</label>
+        <!-- Tab 3 -->
+        <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+        <label for="tab3">Visualizar todo</label>
+
+        <div class="tab-panels">
+            <section id="grabar" class="tab-panel">
+                <article>
+                    <div id="panelGrabar">
+                        <input id="capturar" class="button" onclick="capturarFoto()" value="Capturar Foto"
+                            style="width:150px;">
+                        <div style="display:table-caption;">
+                            <input type="file" id="files">
+                            <video id="Video1" controls style="border: 1px solid blue;" height="333" width="500"
+                                title="Video Base"></video>
+                        </div>
+                    </div>
+                    <div id="formulario">
+                        <h1>Grabar registro</h1>
+                        <form>
+                            <input type="text" id="cCategoria" placeholder="Categoria" />
+                            <input type="text" id="cTitulo" placeholder="Titulo" />
+                            <input type="text" id="cDescripcion" placeholder="Descripcion" />
+                            <input type="button" class="button" id="Grabar" value="Grabar datos" />
+                        </form><canvas id="foto"></canvas>
+                    </div>
+                </article>
+            </section>
+            <section id="ver" class="tab-panel">
+                <form>
+                    <p>Búsqueda por categoría </p>
+                    <input type="text" id="cdatoabuscar" />
+                    <input type="button" class="button" id="busqueda" value="Filtrar la galería" />
+                    <p><b>Clickea en las imagenes para expandir</b></p>
+                </form>
+                <div class="container">
+                    <div class="gallery" id="galeriaContenedor">
+
+                    </div>
+                </div>
+            </section>
+            <section id="verTodo" class="tab-panel">
+                <form>
+                    <input type="button" class="button" id="todo" value="Ver todo" />
+                    <p><b>Clickea en las imagenes para expandir</b></p>
+                </form>
+                <div class="container">
+                    <div class="gallery" id="galeriaTodo">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+
+        </div>
+    </div>
+    <script src="./js/funciones.js"></script>
+    <script src="./js/bbdd.js"></script>
+</body>
+
+</html>
